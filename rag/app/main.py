@@ -2,8 +2,8 @@ from typing import Annotated, Any, Sequence
 from fastapi import Depends, FastAPI, HTTPException
 from sqlmodel import Field, SQLModel, Session, create_engine, select
 
-from rag.db import create_db_and_tables, SessionDep
-from rag.routers import resources, users
+from app.db import create_db_and_tables, SessionDep
+from app.routers import resources, users
 
 app = FastAPI()
 app.include_router(resources.router)

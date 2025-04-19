@@ -1,10 +1,11 @@
+import os
 from typing import Annotated
+from dotenv import load_dotenv
 from fastapi import Depends
 from sqlmodel import SQLModel, Session, create_engine
 
-connection_string = f"postgresql://localhost:5432/samly"
-
-engine = create_engine(connection_string)
+load_dotenv()
+engine = create_engine(os.getenv("DATABASE_URL") or "lmao")
 
 
 def create_db_and_tables():

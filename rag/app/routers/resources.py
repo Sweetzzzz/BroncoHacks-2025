@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from sqlmodel import select
-from rag.db import SessionDep
-from rag.models import Resource, ResourceCreate, ResourceUpdate
+from app.db import SessionDep
+from app.models import Resource, ResourceCreate, ResourceUpdate
 
 router = APIRouter(prefix="/resources", tags=["Resources"])
 
